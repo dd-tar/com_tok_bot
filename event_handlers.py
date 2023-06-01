@@ -60,7 +60,7 @@ async def send_task_created(task_id, com_tok, creator_tg_id, name, description, 
           f"Creator Telegram username: {creator_username}\n" \
           f"Task description: {description}\n" \
           f"Deadline: {date_time_deadline}\n" \
-          f"Reward: {reward}\n\n" \
+          f"Reward: {reward/1e18} ETH\n\n" \
           + disclaimer + "\n#task"
     await _bot.send_message(chat_id, res, parse_mode="HTML")
     await _bot.session.close()

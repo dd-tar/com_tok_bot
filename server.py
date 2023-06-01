@@ -82,11 +82,11 @@ async def create_community_with_token(
             await bot.send_message(message.from_user.id, "Wrong arguments: Token name and symbol should contain "
                                                          "latin letters, numbers and underscore characters only")
         else:
-            is_price = await helpers.is_float(params[3])
+            _price = params[3].replace(",", ".")
+            is_price = await helpers.is_float(_price)
             if is_price:
                 _name = params[1]
                 _symbol = params[2]
-                _price = params[3]
                 _com_wallet = params[4]
                 _tg_id = message.from_user.id
                 link = await helpers.get_create_community_with_token_link(_name, _symbol, _price, _com_wallet, _tg_id)
@@ -510,7 +510,7 @@ async def create_task(message: types.Message):
         await bot.send_message(message.chat.id, "Invalid number of arguments.")
         return
     deadline = params[1]  # uint (hours)
-    reward = params[2]  # uint
+    reward = params[2].replace(",", ".")  # float
     if not await helpers.check_group_token_exists_by_id(message.chat.id):
         await bot.send_message(message.chat.id, "Token is not set for your community")
         return

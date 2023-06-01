@@ -1,9 +1,9 @@
 import json
 from web3 import Web3, HTTPProvider
 
-INFURA_PROVIDER = f"https://sepolia.infura.io/v3/your_api_key" #your api key
+INFURA_PROVIDER = f"https://sepolia.infura.io/v3/your_infura_id" #your api key
 GANACHE_PROVIDER = "http://127.0.0.1:7545"
-w3 = Web3(HTTPProvider(INFURA_PROVIDER)) # or you can use your own provider
+w3 = Web3(HTTPProvider(INFURA_PROVIDER)) # your provider
 
 backlog_abi = """
 [
@@ -656,6 +656,6 @@ backlog_abi = """
 	}
 ]
 """
-BACKLOG_ADDRESS = Web3.toChecksumAddress("0xc69EBA07038E5940117ef1e427a4E12F474eE600")
+BACKLOG_ADDRESS = Web3.toChecksumAddress("0xD4f35033904e7359F5A2B3e0F2EDD96e2725Eb5E")
 backlog = json.loads(backlog_abi)
 backlog_contract = w3.eth.contract(address=BACKLOG_ADDRESS, abi=backlog)

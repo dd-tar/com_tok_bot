@@ -1,9 +1,9 @@
 import json
 from web3 import Web3, HTTPProvider
 
-INFURA_PROVIDER = f"https://sepolia.infura.io/v3/your_api_key" #paste your Infura API key here
+INFURA_PROVIDER = f"https://sepolia.infura.io/v3/your_infura_id" #your api key
 GANACHE_PROVIDER = "http://127.0.0.1:7545"
-w3 = Web3(HTTPProvider(INFURA_PROVIDER)) # or any other provider
+w3 = Web3(HTTPProvider(INFURA_PROVIDER)) # your provider
 
 com_factory_abi = """
 [
@@ -744,6 +744,6 @@ com_factory_abi = """
 ]
 """
 
-COMMUNITY_FACTORY_ADDRESS = Web3.toChecksumAddress("0xd1Cc21a843ff16f7C419d03F2b9B52109DB3080f")
+COMMUNITY_FACTORY_ADDRESS = Web3.toChecksumAddress("0x8b90D81901A3F1566b064d491794b72eE5BEf0B2")
 com_factory = json.loads(com_factory_abi)
 cf_contract = w3.eth.contract(address=COMMUNITY_FACTORY_ADDRESS, abi=com_factory)

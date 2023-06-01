@@ -8,7 +8,7 @@ from contract_abi.Voting import voting_contract
 from contract_abi.Backlog import backlog_contract
 
 
-async def is_member(com_id, tg_id: int) -> bool:  # TODO
+async def is_member(com_id, tg_id: int) -> bool:
     mem_addr = cf_contract.functions.getMemberAddress(com_id, tg_id).call()
     is_mem = cf_contract.functions.isMember(com_id, mem_addr).call()
     print(f"is member: {is_mem}")

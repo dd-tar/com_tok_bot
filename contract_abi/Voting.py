@@ -1,7 +1,7 @@
 import json
 from web3 import Web3, HTTPProvider
 
-INFURA_PROVIDER = f"https://sepolia.infura.io/v3/your_api_key" # paste your Infura API key here
+INFURA_PROVIDER = f"https://sepolia.infura.io/v3/your_infura_id" #your api key
 GANACHE_PROVIDER = "http://127.0.0.1:7545"
 w3 = Web3(HTTPProvider(INFURA_PROVIDER))  # your provider
 
@@ -404,6 +404,6 @@ voting_abi = """
 ]
 """
 
-VOTING_ADDRESS = Web3.toChecksumAddress("0xb153209ea928D55415a52A5e0dfaCd917311CA32")
+VOTING_ADDRESS = Web3.toChecksumAddress("0xC4971afF4818aA02435033eE92568A040A4b6e8f")
 voting = json.loads(voting_abi)
 voting_contract = w3.eth.contract(address=VOTING_ADDRESS, abi=voting)
