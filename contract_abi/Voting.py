@@ -404,6 +404,6 @@ voting_abi = """
 ]
 """
 
-VOTING_ADDRESS = Web3.toChecksumAddress("0xC4971afF4818aA02435033eE92568A040A4b6e8f")
+VOTING_ADDRESS = Web3.toChecksumAddress("0xe7D5E1eeb5c1D76408978728d0D5bB0F80647Bd6")
 voting = json.loads(voting_abi)
 voting_contract = w3.eth.contract(address=VOTING_ADDRESS, abi=voting)
