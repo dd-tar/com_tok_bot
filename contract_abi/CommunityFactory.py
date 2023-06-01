@@ -744,6 +744,6 @@ com_factory_abi = """
 ]
 """
 
-COMMUNITY_FACTORY_ADDRESS = Web3.toChecksumAddress("0x8b90D81901A3F1566b064d491794b72eE5BEf0B2")
+COMMUNITY_FACTORY_ADDRESS = Web3.toChecksumAddress("0x64fE4979598eA35EB8E725FAfeeA1DFA7c11Bea2")
 com_factory = json.loads(com_factory_abi)
 cf_contract = w3.eth.contract(address=COMMUNITY_FACTORY_ADDRESS, abi=com_factory)
