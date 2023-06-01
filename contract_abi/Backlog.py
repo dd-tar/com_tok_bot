@@ -656,6 +656,6 @@ backlog_abi = """
 	}
 ]
 """
-BACKLOG_ADDRESS = Web3.toChecksumAddress("0xD4f35033904e7359F5A2B3e0F2EDD96e2725Eb5E")
+BACKLOG_ADDRESS = Web3.toChecksumAddress("0x16bccDedDDb5a2c412Dc5e269B327Ef34EEfEcA0")
 backlog = json.loads(backlog_abi)
 backlog_contract = w3.eth.contract(address=BACKLOG_ADDRESS, abi=backlog)
